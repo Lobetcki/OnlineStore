@@ -1,10 +1,10 @@
-package com.example.onlinestoretesttask;
+package com.example.onlinestoreproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OnlineStoreTestTaskApplicationTests {
+class OnlineStoreProjectApplicationTests {
 
     @Test
     void contextLoads() {
