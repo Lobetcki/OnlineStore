@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/scripts/category.sql
+  - include:
+      file: liquibase/scripts/product.sql
