@@ -8,4 +8,8 @@ create table category
     name VARCHAR(255)
 );
 
+-- changeset anton:2.1:insertSQLChangeType
+INSERT  INTO  store.public.category  (name)  VALUES  ('Gan');
+INSERT  INTO  store.public.category  (name)  VALUES  ('Car');
+INSERT  INTO  store.public.category  (name)  VALUES  ('Tou');
 
