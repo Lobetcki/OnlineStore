@@ -16,8 +16,10 @@ public class ProductDTO {
     private Long id;
     private String name;
     private String description;
-    private Instant creationDate;
-    private Instant modificationDate;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Instant creationDate = Instant.now();
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Instant modificationDate = Instant.now();
     private Set<CategoryDTO> categories;
 
     public static ProductDTO of(Product product) {
