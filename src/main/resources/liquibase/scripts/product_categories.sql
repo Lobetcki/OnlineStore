@@ -5,6 +5,6 @@
 create table product_categories
 (
     categories_id bigint NOT NULL REFERENCES category(id),
-    products_id   bigint NOT NULL REFERENCES product(id),
-    PRIMARY KEY (products_id, categories_id)
+    product_id   bigint NOT NULL REFERENCES product(id),
+    PRIMARY KEY (product_id, categories_id)
 );

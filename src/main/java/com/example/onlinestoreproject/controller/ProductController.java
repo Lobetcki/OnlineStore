@@ -22,13 +22,13 @@ public class ProductController {
     }
 
     @PostMapping
-    public ProductDTO create(ProductDTO product){
+    public ProductDTO create(@RequestBody ProductDTO product){
         return productService.save(product);
     }
 
-    @PatchMapping
-    public ProductDTO update(ProductDTO product){
-        return productService.update(product);
+    @PatchMapping("/update/{id}")
+    public ProductDTO update(@PathVariable Long id, @RequestBody ProductDTO product){
+        return productService.update(id, product);
     }
 
     @DeleteMapping("/{id}")
@@ -38,7 +38,9 @@ public class ProductController {
 
 //    TODO: Implement
     @GetMapping("/search")
-    public List<ProductDTO> search(@RequestParam(required = false) String name, @RequestParam(required = false) String description, @RequestParam(required = false) String categoryName){
+    public List<ProductDTO> search(@RequestParam(required = false) String name,
+                                   @RequestParam(required = false) String description,
+                                   @RequestParam(required = false) String categoryName){
         return productService.search(name, description, categoryName);
     }
 }

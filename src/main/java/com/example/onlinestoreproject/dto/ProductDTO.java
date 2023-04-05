@@ -1,17 +1,18 @@
 package com.example.onlinestoreproject.dto;
 
-import com.example.onlinestoreproject.model.Category;
 import com.example.onlinestoreproject.model.Product;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.time.Instant;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toSet;
 
 @Data
 public class ProductDTO {
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
     private String name;
     private String description;
@@ -32,12 +33,10 @@ public class ProductDTO {
 
     public Product to() {
         Product product = new Product();
-        product.setId(this.getId());
         product.setName(this.getName());
         product.setDescription(this.getDescription());
         product.setCreationDate(this.getCreationDate());
         product.setModificationDate(this.getModificationDate());
-        product.setCategories(this.getCategories().stream().map(CategoryDTO::to).collect(toSet()));
         return product;
     }
 }

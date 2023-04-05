@@ -14,11 +14,4 @@ public class CategoryDTO {
         categoryDTO.setName(category.getName());
         return categoryDTO;
     }
-
-    public static Category to(CategoryDTO categoryDTO) {
-        Category category = new Category();
-        category.setId(categoryDTO.getId());
-        category.setName(categoryDTO.getName());
-        return category;
-    }
 }

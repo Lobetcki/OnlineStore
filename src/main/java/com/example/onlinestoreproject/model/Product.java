@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -19,5 +20,9 @@ public class Product {
     private Instant creationDate = Instant.now();
     private Instant modificationDate = Instant.now();
     @ManyToMany
-    private Set<Category> categories;
+    private Set<Category> categories = new HashSet<>();
+
+    public void addCategory(Category category) {
+        this.categories.add(category);
+    }
 }

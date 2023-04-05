@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product,Long>, JpaSpecificationExecutor<Product> {
-    @EntityGraph(attributePaths = {"category"})
-    List<Product> findFetchAll(Sort sort);
+    @EntityGraph(attributePaths = {"categories"})
+    List<Product> findFetchAllBy(Sort sort);
 
 
 }
